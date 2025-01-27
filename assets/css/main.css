@@ -34,44 +34,54 @@
 
 }
 
-/* Partner Carousel Styles */
+
 .partner-carousel {
   display: flex;
-  width: 200%; /* Double the width to accommodate duplicated slides */
-  animation: slide 20s linear infinite; /* Adjust timing as needed */
+  gap: 40px;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 .partner-slide {
-  flex: 0 0 12.5%; /* Adjust based on the number of items visible at a time */
-  transition: transform 0.5s ease-in-out;
-  margin : 40px;
-}
-
-.partner-item {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 80px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 150px; /* Set a fixed height for the container */
+  align-items: center;
 }
 
-.partner-img {
-  height: 100%; /* Make the image fill the container height */
-  width: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure the image doesn't overflow */
+.partner-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.partner-slide:not(:hover){
+  transition: all 0.3s;
+  opacity: 0.5;
   filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-
 }
 
-.partner-img:hover {
-  filter: grayscale(0%);
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-/* Infinite Sliding Animation */
-@keyframes slide {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); } /* Move by half the width */
+/* Infinite scroll animation */
+.partner-carousel {
+  animation: scroll alternate 20s infinite;
 }
+
+.partner-carousel:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
@@ -1785,4 +1795,33 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+
+
+
+
+
+
+/* Design for mobile devices */
+@media screen and (max-width : 600px) {
+  #hero >  h1{
+    margin-top: -60px !important;
+    font-size: 25px !important;
+    position: relative;
+  }
+
+
+  img[src="assets/img/mobile-app.svg"]{
+    scale: 0.7 !important;
+    margin: auto !important;
+    position: relative !important;
+    /* margin-top:-40px !important; */
+  }
+
+  #container > :first-child > :first-child{
+    margin-top: 0px !important;
+  }
+
+
 }

@@ -183,16 +183,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.partner-carousel');
-
-  carousel.addEventListener('mouseenter', () => {
-    carousel.style.animationPlayState = 'paused';
-  });
-
-  carousel.addEventListener('mouseleave', () => {
-    carousel.style.animationPlayState = 'running';
-  });
-});
