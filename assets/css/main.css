@@ -28,7 +28,6 @@
 
 
 
-
 [data-purecounter-start]::before{
   content: "+";
 
@@ -1824,4 +1823,9 @@ section,
   }
 
 
+}
+
+
+a:not(.website_link){
+  color: white !important;
 }
