@@ -1826,6 +1826,6 @@ section,
 }
 
 
-a:not(.website_link){
+/* a:not(.website_link){
   color: white !important;
-}
+} */
